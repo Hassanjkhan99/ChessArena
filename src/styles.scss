@@ -1,1 +1,57 @@
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 /* You can add global styles to this file, and also import other style files */
+.chess-board {
+  border: 1px solid rgba(110, 62, 20, 0.2);
+  border-radius: 10px;
+
+}
+
+.d-flex-center-center {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.d-flex-center-center-column {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.card {
+  padding: 5px 25px 25px 25px;
+  background: #834f0d;
+
+  --elevation: 24;
+  --epx: calc(var(--elevation) * 1px);
+
+  /* these 2 shadows serve as a border for  0-1 elevation    */
+  --shadow1: 0 0 1px rgba(0, 0, 0, .1);
+  --shadow2: 0 1px 2px rgba(0, 0, 0, .08);
+
+  --offset-y: calc(var(--epx) + 1px);
+  --blur: calc(var(--epx) * 2);
+  --spread: calc(var(--epx) * .3);
+  --shadow3: 0 var(--offset-y) var(--blur) var(--spread) rgba(0, 0, 0, 0.2);
+
+  box-shadow: var(--shadow1),
+  var(--shadow2),
+  var(--shadow3);
+}
+
+.heading {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-weight: 800;
+}
+
+body {
+  font-family: "Fira Code", ui-rounded;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+
