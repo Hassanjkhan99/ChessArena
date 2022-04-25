@@ -1,0 +1,80 @@
+<div class="main background">
+  <h1>Chess Arena</h1>
+  <button
+    (click)="post('reset')"
+    class="btn btn-primary"
+    style="background: #834f0d"
+  >
+    Create New Game
+  </button>
+  <div
+    [ngStyle]="{ display: loading ? 'none' : 'block' }"
+    class="boards-container d-flex-center-center"
+  >
+    <iframe
+      #board1
+      (load)="setBoard1()"
+      [src]="board1Path"
+      class="board-container d-flex-center-center"
+    ></iframe>
+    <iframe
+      #board2
+      (load)="setBoard2()"
+      [src]="board1Path"
+      class="board-container d-flex-center-center"
+    ></iframe>
+  </div>
+</div>
+<div [ngStyle]="{ display: !loading ? 'none' : 'block' }">
+  <div class="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<ng-template #win let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">White Won</h4>
+    <button
+      (click)="modal.dismiss('Cross click')"
+      aria-label="Close"
+      class="btn-close"
+      type="button"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <h3>White Won By Checkmate</h3>
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="modal.close('reset')"
+      class="btn btn-outline-dark"
+      type="button"
+    >
+      Create new game
+    </button>
+  </div>
+</ng-template>
+<ng-template #lose let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Black Won</h4>
+    <button
+      (click)="modal.dismiss('Cross click')"
+      aria-label="Close"
+      class="btn-close"
+      type="button"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <h3>Black Won By Checkmate</h3>
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="modal.close('reset')"
+      class="btn btn-outline-dark"
+      type="button"
+    >
+      Create new game
+    </button>
+  </div>
+</ng-template>

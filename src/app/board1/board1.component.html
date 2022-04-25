@@ -1,0 +1,21 @@
+<div
+  class="chess-board card card-bg d-flex-center-center d-flex-center-center-column"
+>
+  <h1 class="heading">Player {{ isBlack ? "2" : "1" }}</h1>
+  <ngx-chess-board
+    #board
+    (moveChange)="moveChange($event)"
+    [darkDisabled]="!isBlack"
+    [darkTileColor]="darkTileColor"
+    [dragDisabled]="dragDisabled"
+    [drawDisabled]="drawDisabled"
+    [freeMode]="freeMode"
+    [lightTileColor]="lightTileColor"
+    [showActivePiece]="showActivePieces"
+    [showCoords]="showCoords"
+    [showLastMove]="showLastMove"
+    [showLegalMoves]="showLegalMoves"
+    [showPossibleCaptures]="showPossibleCaptures"
+    [size]="boardSize"
+  ></ngx-chess-board>
+</div>
